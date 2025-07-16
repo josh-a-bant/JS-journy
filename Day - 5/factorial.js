@@ -1,6 +1,7 @@
-// 6! = 6*5*4*3*2*1
+// ex : 6! = 6*5*4*3*2*1
 
 // using for loop
+
 let num = 6;
 let factorialNum = 1;
 for (let i = num; i >= 1; i--) {
@@ -10,9 +11,12 @@ for (let i = num; i >= 1; i--) {
 console.log(factorialNum);
 
 // using reduce method
-let n = [6, 5, 4, 3, 2, 1];
+let n = 6;
+let arr = Array.from(Array(n + 1).keys());
+console.log(arr);
+
 console.log(
-  n.reduce((pre, curr) => {
-    return (pre = pre * curr);
+  arr.slice(1).reduce((pre, curr) => {
+    return pre * curr;
   })
 );
