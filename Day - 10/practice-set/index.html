@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice - set | JS</title>
+    <style>
+      * {
+        font-size: 1.2rem;
+      }
+      .add-bag {
+        background-color: lightgreen;
+        color: #000;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+      }
+      .wishlist {
+        border-radius: 10px;
+        border: 1px solid;
+        padding: 5px 10px;
+        text-transform: uppercase;
+      }
+
+      .display {
+        margin-top: 2rem;
+        border-radius: 10px;
+        height: 2rem;
+        padding: 1rem;
+        font-weight: 700;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <button id="add-bag" class="add-bag">Add to Bag</button>
+      <button id="wishlist" class="wishlist">Move to Wishlist</button>
+      <button id="add2item" class="add-bag">Add 1+1 sale item</button>
+
+      <div class="display"></div>
+
+      <script>
+        let itemQuantity = 5;
+        let display = document.querySelector(".display");
+        function itemAdd() {
+          display.innerHTML = `item added to the bag`;
+        }
+        function addToItem() {
+          display.innerHTML = `${itemQuantity} items added to the bag`;
+        }
+        function addToWishlist() {
+          display.innerHTML = `items move to the Wishlist`;
+        }
+
+        let addBag = document.querySelector("#add-bag");
+        addBag.addEventListener("click", itemAdd);
+
+        let add2Item = document.querySelector("#add2item");
+        add2Item.addEventListener("click", addToItem);
+
+        let moveToWL = document.querySelector("#wishlist");
+        moveToWL.addEventListener("click", addToWishlist);
+      </script>
+    </main>
+  </body>
+</html>
