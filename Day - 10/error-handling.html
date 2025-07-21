@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Enter 1st number: ");
+      let b = prompt("Enter 2nd number: ");
+
+      try {
+        console.log("hello");
+        let c = parseInt(a) + parseInt(b);
+        console.log(c);
+      } catch (error) {
+        console.log("hi");
+        alert("enter a number not string");
+      } finally {
+        console.log("finally");
+      }
+    </script>
+  </body>
+</html>

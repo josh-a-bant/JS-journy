@@ -1,13 +1,25 @@
 console.log("js code run");
+// background-color: rgb(0 to 255, 0 to 255, 0 to 255);
+// color: rgb(0 to 255, 0 to 255, 0 to 255);
 
 let boxes = document.getElementsByClassName("boxes");
-let colors = ["purple", "Cyan", "brown"];
-let backgroundColor = ["red", "green", "blue", "Fuchsia", "Indigo", "Magenta"];
-console.log(boxes);
+
+let random = () => {
+  return Math.round(Math.random() * (255 - 0) + 1);
+};
 
 Array.from(boxes).forEach((box) => {
-  box.style.color = colors[Math.floor(Math.random() * colors.length)];
-  box.style.backgroundColor =
-    backgroundColor[Math.floor(Math.random() * backgroundColor.length)];
+  let color = `rgb(${random()}, ${random()}, ${random()})`;
+  let backgroundColor = `rgb(${random()}, ${random()}, ${random()})`;
+
+  box.style.color = color;
+  box.style.backgroundColor = backgroundColor;
+
+  let colorCode = document.createElement("p");
+  colorCode = backgroundColor;
+
+  box.append(colorCode);
+
+  console.log(box.style);
   box.hidden = false;
 });

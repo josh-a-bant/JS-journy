@@ -13,12 +13,19 @@
       body {
         background-color: black;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
       }
 
       .container {
+        width: 90vw;
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        color: white;
       }
 
       .card {
@@ -28,6 +35,18 @@
         gap: 1rem;
       }
 
+      .container-image {
+        position: relative;
+      }
+
+      .container-image .duration {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        border-radius: 5px;
+        padding: 3px;
+        background-color: black;
+      }
       .container-details {
         display: flex;
         flex-direction: column;
@@ -43,31 +62,21 @@
         display: flex;
         gap: 1.5rem;
       }
+
+      .btn {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background-color: rgba(255, 253, 253, 0.144);
+        color: white;
+        text-shadow: 0 0 20px white;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <!-- card start-->
-      <div class="card">
-        <section class="container-image">
-          <img class="thumbnail" src="" alt="" />
-          <div class="duration"></div>
-        </section>
-
-        <section class="container-details">
-          <h1 class="title"></h1>
-          <div class="vdoInfo">
-            <div class="cName"></div>
-            <ul>
-              <li class="views"></li>
-              <li class="monthsOld"></li>
-            </ul>
-          </div>
-        </section>
-      </div>
-      <!-- card end -->
-    </div>
-
+    <button class="btn">Add Card</button>
+    <div class="container"></div>
     <script src="script.js"></script>
   </body>
 </html>
