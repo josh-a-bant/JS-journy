@@ -169,7 +169,7 @@
           >
             /
           </button>
-          <button class="button" onclick="operation(currentDisplay)">=</button>
+          <button class="button" onclick="operation()">=</button>
         </section>
       </div>
     </main>
@@ -185,9 +185,14 @@
         text.value = currentDisplay;
       });
 
-      function operation(currentDisplay) {
-        let result = eval(currentDisplay);
-        text.value = result;
+      function operation() {
+        try {
+          currentDisplay = eval(currentDisplay).toString();
+          text.value = currentDisplay;
+        } catch (e) {
+          text.value = "Error";
+          currentDisplay = "";
+        }
       }
     </script>
   </body>
