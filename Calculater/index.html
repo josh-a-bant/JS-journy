@@ -8,37 +8,187 @@
   </head>
   <body>
     <header>
-      <h1>Calculator using Js</h1>
+      <h1>Calculator using JS</h1>
       <hr />
     </header>
 
     <main>
       <div class="calculator">
         <section id="display">
-          <input type="text" />
-          <button>c</button>
+          <input type="text" id="text" readonly />
+          <button id="cButton">c</button>
         </section>
         <section id="buttons">
-          <button class="button">0</button>
-          <button class="button">1</button>
-          <button class="button">2</button>
-          <button class="button">3</button>
-          <button class="button">4</button>
-          <button class="button">5</button>
-          <button class="button">6</button>
-          <button class="button">7</button>
-          <button class="button">8</button>
-          <button class="button">9</button>
-          <button class="button">.</button>
-          <button class="button">+</button>
-          <button class="button">-</button>
-          <button class="button">*</button>
-          <button class="button">/</button>
-          <button class="button">=</button>
+          <button
+            class="button"
+            value="0"
+            onclick="
+            currentDisplay = currentDisplay + '0';
+            text.value = currentDisplay;  
+          "
+          >
+            0
+          </button>
+          <button
+            class="button"
+            value="1"
+            onclick="
+            currentDisplay = currentDisplay + '1';
+            text.value = currentDisplay;  
+          "
+          >
+            1
+          </button>
+          <button
+            class="button"
+            value="2"
+            onclick="
+            currentDisplay = currentDisplay + '2';
+            text.value = currentDisplay;  
+          "
+          >
+            2
+          </button>
+          <button
+            class="button"
+            value="3"
+            onclick="
+            currentDisplay = currentDisplay + '3';
+            text.value = currentDisplay;  
+          "
+          >
+            3
+          </button>
+          <button
+            class="button"
+            value="4"
+            onclick="
+            currentDisplay = currentDisplay + '4';
+            text.value = currentDisplay;  
+          "
+          >
+            4
+          </button>
+          <button
+            class="button"
+            value="5"
+            onclick="
+            currentDisplay = currentDisplay + '5';
+            text.value = currentDisplay;  
+          "
+          >
+            5
+          </button>
+          <button
+            class="button"
+            value="6"
+            onclick="
+            currentDisplay = currentDisplay + '6';
+            text.value = currentDisplay;  
+          "
+          >
+            6
+          </button>
+          <button
+            class="button"
+            value="7"
+            onclick="
+            currentDisplay = currentDisplay + '7';
+            text.value = currentDisplay;  
+          "
+          >
+            7
+          </button>
+          <button
+            class="button"
+            value="8"
+            onclick="
+            currentDisplay = currentDisplay + '8';
+            text.value = currentDisplay;  
+          "
+          >
+            8
+          </button>
+          <button
+            class="button"
+            value="9"
+            onclick="
+            currentDisplay = currentDisplay + '9';
+            text.value = currentDisplay;  
+          "
+          >
+            9
+          </button>
+          <button
+            class="button"
+            value="."
+            onclick="
+            currentDisplay = currentDisplay + '.';
+            text.value = currentDisplay;  
+          "
+          >
+            .
+          </button>
+          <button
+            class="button"
+            value="+"
+            onclick="
+            currentDisplay = currentDisplay + '+';
+            text.value = currentDisplay;  
+          "
+          >
+            +
+          </button>
+          <button
+            class="button"
+            value="-"
+            onclick="
+            currentDisplay = currentDisplay + '-';
+            text.value = currentDisplay;  
+          "
+          >
+            -
+          </button>
+          <button
+            class="button"
+            value="*"
+            onclick="
+            currentDisplay = currentDisplay + '*';
+            text.value = currentDisplay;  
+          "
+          >
+            *
+          </button>
+          <button
+            class="button"
+            value="/"
+            onclick="
+            currentDisplay = currentDisplay + '/';
+            text.value = currentDisplay;  
+          "
+          >
+            /
+          </button>
+          <button class="button" onclick="operation(currentDisplay)">=</button>
         </section>
       </div>
     </main>
 
-    <script src="js.js"></script>
+    <script>
+      let currentDisplay = "";
+
+      let text = document.querySelector("#text");
+
+      let clear = document.querySelector("#cButton");
+      clear.addEventListener("click", () => {
+        currentDisplay = "";
+        text.value = currentDisplay;
+      });
+
+      function operation(currentDisplay) {
+        let result = eval(currentDisplay);
+        text.value = result;
+      }
+    </script>
   </body>
 </html>
