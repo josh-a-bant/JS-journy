@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket Game | JS</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      button {
+        margin: 1rem;
+        padding: 0.25rem 1rem;
+        border-radius: 0.5em;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cricket game with pc using JS fundamentals</h1>
+    <hr />
+    <div>
+      <button onclick="forBat()">bat</button>
+      <button onclick="forBall()">ball</button>
+      <button onclick="forStump()">stump</button>
+    </div>
+
+    <p>To see the output visit Inspect > console</p>
+
+    <script>
+      let random = () => {
+        return Math.round(Math.random() * (3 - 1));
+      };
+
+      let choises = ["bat", "ball", "stump"];
+      let computerChoice;
+
+      function forBat() {
+        computerChoice = choises[random()];
+
+        if (computerChoice === "bat") {
+          console.log(
+            `computer choose ${computerChoice} & user choose Bat so it is a Tie`
+          );
+        } else if (computerChoice === "ball") {
+          console.log(
+            `computer choose ${computerChoice} & user choose Bat so winner is user`
+          );
+        } else {
+          console.log(
+            `computer choose ${computerChoice} & user choose Bat so winner is PC`
+          );
+        }
+      }
+
+      function forBall() {
+        computerChoice = choises[random()];
+
+        if (computerChoice === "bat") {
+          console.log(
+            `computer choose ${computerChoice} & user choose Ball so winner is PC`
+          );
+        } else if (computerChoice === "ball") {
+          console.log(
+            `computer choose ${computerChoice} & user choose Ball so it is a Tie`
+          );
+        } else {
+          console.log(
+            `computer choose ${computerChoice} & user choose Ball so winner is user`
+          );
+        }
+      }
+
+      function forStump() {
+        computerChoice = choises[random()];
+
+        if (computerChoice === "bat") {
+          console.log(
+            `computer choose ${computerChoice} & user choose Stump so winner is User`
+          );
+        } else if (computerChoice === "ball") {
+          console.log(
+            `computer choose ${computerChoice} & user choose Stump so winner is PC`
+          );
+        } else {
+          console.log(
+            `computer choose ${computerChoice} & user choose Stump so it is a Tie`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
