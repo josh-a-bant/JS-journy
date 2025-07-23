@@ -29,64 +29,59 @@
     <p>To see the output visit Inspect > console</p>
 
     <script>
-      let random = () => {
+      function random() {
         return Math.round(Math.random() * (3 - 1));
-      };
+      }
 
       let choises = ["bat", "ball", "stump"];
-      let computerChoice;
+
+      function showResult(computerChoice, userChoice, result) {
+        console.log(
+          `computer choose ${computerChoice} & user choose ${userChoice} so winner is ${result}`
+        );
+      }
 
       function forBat() {
-        computerChoice = choises[random()];
-
-        if (computerChoice === "bat") {
-          console.log(
-            `computer choose ${computerChoice} & user choose Bat so it is a Tie`
-          );
-        } else if (computerChoice === "ball") {
-          console.log(
-            `computer choose ${computerChoice} & user choose Bat so winner is user`
-          );
-        } else {
-          console.log(
-            `computer choose ${computerChoice} & user choose Bat so winner is PC`
-          );
-        }
+        let computerChoice = choises[random()];
+        let winner = result("Bat", computerChoice);
+        showResult(computerChoice, "Bat", winner);
       }
-
       function forBall() {
-        computerChoice = choises[random()];
-
-        if (computerChoice === "bat") {
-          console.log(
-            `computer choose ${computerChoice} & user choose Ball so winner is PC`
-          );
-        } else if (computerChoice === "ball") {
-          console.log(
-            `computer choose ${computerChoice} & user choose Ball so it is a Tie`
-          );
-        } else {
-          console.log(
-            `computer choose ${computerChoice} & user choose Ball so winner is user`
-          );
-        }
+        let computerChoice = choises[random()];
+        let winner = result("Ball", computerChoice);
+        showResult(computerChoice, "Ball", winner);
+      }
+      function forStump() {
+        let computerChoice = choises[random()];
+        let winner = result("stump", computerChoice);
+        showResult(computerChoice, "stump", winner);
       }
 
-      function forStump() {
-        computerChoice = choises[random()];
-
-        if (computerChoice === "bat") {
-          console.log(
-            `computer choose ${computerChoice} & user choose Stump so winner is User`
-          );
-        } else if (computerChoice === "ball") {
-          console.log(
-            `computer choose ${computerChoice} & user choose Stump so winner is PC`
-          );
+      function result(userChoice, computerChoice) {
+        if (userChoice === "Bat") {
+          if (computerChoice === "bat") {
+            return "Tie";
+          } else if (computerChoice === "ball") {
+            return "User";
+          } else {
+            return "PC";
+          }
+        } else if (userChoice === "Ball") {
+          if (computerChoice === "bat") {
+            return "PC";
+          } else if (computerChoice === "ball") {
+            return "Tie";
+          } else {
+            return "Usser";
+          }
         } else {
-          console.log(
-            `computer choose ${computerChoice} & user choose Stump so it is a Tie`
-          );
+          if (computerChoice === "bat") {
+            return "User";
+          } else if (computerChoice === "ball") {
+            return "PC";
+          } else {
+            return "Tie";
+          }
         }
       }
     </script>
