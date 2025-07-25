@@ -15,30 +15,78 @@
         font-size: 1.5rem;
         cursor: pointer;
       }
+      .images {
+        height: 100px;
+      }
     </style>
   </head>
   <body>
     <h1>Cricket game with pc using JS fundamentals</h1>
     <hr />
     <div>
-      <button onclick="forBat()">bat</button>
-      <button onclick="forBall()">ball</button>
-      <button onclick="forStump()">stump</button>
+      <button onclick="forBat()">
+        <img src="images/bat.png" alt="bat image" class="images" />
+      </button>
+      <button onclick="forBall()">
+        <img src="images/ball.png" alt="ball image" class="images" />
+      </button>
+      <button onclick="forStump()">
+        <img src="images/stump.png" alt="stump image" class="images" />
+      </button>
+
+      <h3 id="user-chose"></h3>
+      <h3 id="pc-chose"></h3>
+      <h3 id="result"></h3>
+      <h3 id="score"></h3>
+
+      <button onclick="localStorage.clear(); clearStorage()">reset</button>
     </div>
 
-    <p>To see the output visit Inspect > console</p>
-
     <script>
+      let choises = ["bat", "ball", "stump"];
       function random() {
         return Math.round(Math.random() * (3 - 1));
       }
 
-      let choises = ["bat", "ball", "stump"];
+      let scoreCount = JSON.parse(localStorage.getItem("score")) || {
+        win: 0,
+        lost: 0,
+        tie: 0,
+      };
+
+      scoreCount.displayScore = function () {
+        return `win:${scoreCount.win} lost:${scoreCount.lost} tie:${scoreCount.tie}`;
+      };
+
+      function clearStorage() {
+        scoreCount = {
+          win: 0,
+          lost: 0,
+          tie: 0,
+        };
+
+        scoreCount.displayScore = function () {
+          return `win:${scoreCount.win} lost:${scoreCount.lost} tie:${scoreCount.tie}`;
+        };
+
+        showResult();
+      }
 
       function showResult(computerChoice, userChoice, result) {
-        console.log(
-          `computer choose ${computerChoice} & user choose ${userChoice} so winner is ${result}`
-        );
+        localStorage.setItem("score", JSON.stringify(scoreCount));
+
+        document.querySelector("#user-chose").innerText =
+          userChoice == undefined ? "" : `user choose ${userChoice}`;
+
+        document.querySelector("#pc-chose").innerText =
+          computerChoice == undefined
+            ? ""
+            : `computer choose ${computerChoice}`;
+
+        document.querySelector("#result").innerText =
+          result == undefined ? "" : result;
+
+        document.querySelector("#score").innerText = scoreCount.displayScore();
       }
 
       function forBat() {
@@ -60,26 +108,35 @@
       function result(userChoice, computerChoice) {
         if (userChoice === "Bat") {
           if (computerChoice === "bat") {
+            scoreCount.tie++;
             return "Tie";
           } else if (computerChoice === "ball") {
+            scoreCount.win++;
             return "User";
           } else {
+            scoreCount.lost++;
             return "PC";
           }
         } else if (userChoice === "Ball") {
           if (computerChoice === "bat") {
+            scoreCount.lost++;
             return "PC";
           } else if (computerChoice === "ball") {
+            scoreCount.tie++;
             return "Tie";
           } else {
+            scoreCount.win++;
             return "Usser";
           }
         } else {
           if (computerChoice === "bat") {
+            scoreCount.win++;
             return "User";
           } else if (computerChoice === "ball") {
+            scoreCount.lost++;
             return "PC";
           } else {
+            scoreCount.tie++;
             return "Tie";
           }
         }

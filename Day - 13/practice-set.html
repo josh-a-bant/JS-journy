@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let jeans = {
+        comany: "Roadster",
+        "item-name": "regular jeans",
+        price: 800,
+      };
+
+      let shirt = {
+        comany: "DNMX",
+        "item-name": "Polo",
+        price: 400,
+      };
+      // product2["item-name"] = "tshirt";
+      // console.log(product["item-name"]);
+
+      // let greet = {
+      //   message: "good job",
+      //   status: "complete",
+      // };
+      // let { message, status } = greet;
+      // console.log(`${message} , ${status}`);
+
+      function identicalProduct(product1, product2) {
+        if (product1 == product2) {
+          return "both are pointing to same object.";
+        } else if (
+          product1.comany == product2.comany &&
+          product1.price == product2.price &&
+          product1["item-name"] == product2["item-name"]
+        ) {
+          return "both products are same.";
+        } else {
+          return "both products are different.";
+        }
+      }
+      console.log(identicalProduct(jeans, shirt));
+    </script>
+  </body>
+</html>

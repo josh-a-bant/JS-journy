@@ -7,31 +7,33 @@
   </head>
   <body>
     <script>
-      // function oddEven(number) {
-      //   if (number % 2 == 0) console.log(`${number} is a even number.`);
-      //   else console.log(`${number} is a odd number`);
-      // }
-
-      // oddEven(11);
-
-      // function lergeNumber(number1, number2) {
-      //   if (number1 > number2) {
-      //     console.log(`${number1} is larger`);
-      //   } else {
-      //     console.log(`${number2} is larger`);
-      //   }
-      // }
-
-      // lergeNumber(40, 20)
-
-      function convertCelsiusToFahrenheit(celsius) {
-        // f = (9/5) * C + 32
-
-        let fahrenheit = (9 / 5) * celsius + 32;
-        console.log(fahrenheit);
+      function oddEven(number) {
+        if (number % 2 == 0) return `${number} is a even number.`;
+        else return `${number} is a odd number`;
       }
 
-      convertCelsiusToFahrenheit(20);
+      // console.log(oddEven(27));
+
+      function largeNumber(number1, number2) {
+        // if (number1 > number2) {
+        //   return `${number1} is larger`;
+        // } else {
+        //   return `${number2} is larger`;
+        // }
+
+        return number1 > number2
+          ? `${number1} is larger`
+          : `${number2} is larger`;
+      }
+
+      // console.log(largeNumber(85, 95));
+
+      function toFahrenheit(celsiusValue) {
+        // f = (9/5) * C + 32
+        return (9 / 5) * celsiusValue + 32;
+      }
+
+      // console.log(toFahrenheit(1));
     </script>
   </body>
 </html>
