@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Clicked Me</button>
+
+    <script>
+      let button = document.querySelector("#btn");
+      showClg = (event) => {
+        button.style.color = "green";
+      };
+
+      button.addEventListener("click", showClg);
+    </script>
+  </body>
+</html>

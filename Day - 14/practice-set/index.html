@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        font-size: 2rem;
+        padding: 1rem;
+      }
+      .js-odd {
+        background-color: lightcoral;
+      }
+
+      .js-even {
+        background-color: lightseagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="greet"></h1>
+
+    <button class="btn" onclick="clickCount()"></button>
+
+    <script>
+      let date = new Date();
+      document.querySelector(".greet");
+
+      let name = "Jyoti";
+      if (date.getHours() < 12) {
+        document.querySelector(".greet").innerText = `Good Morning ${name}`;
+      } else if (date.getHours() < 18) {
+        document.querySelector(".greet").innerText = `Good Afternoon ${name}`;
+      } else {
+        document.querySelector(".greet").innerText = `Good Evening ${name}`;
+      }
+
+      let button = document.querySelector(".btn");
+      let noClickCount = JSON.parse(localStorage.getItem("count")) || 0;
+      button.innerText = `Clicks: ${noClickCount}`;
+
+      function clickCount() {
+        noClickCount++;
+        localStorage.setItem("count", noClickCount);
+        button.innerText = `Clicks: ${noClickCount}`;
+
+        if (noClickCount % 2 === 0) {
+          button.classList.remove("js-odd");
+          button.classList.add("js-even");
+        } else {
+          button.classList.remove("js-even");
+          button.classList.add("js-odd");
+        }
+      }
+    </script>
+  </body>
+</html>

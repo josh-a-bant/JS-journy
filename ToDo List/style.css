@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+}
+
+main {
+  width: 60vw;
+  margin: auto;
+  text-align: center;
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+}
+
+.display-list-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+}
