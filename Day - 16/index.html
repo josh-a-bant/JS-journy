@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function Person(name, age) {
+      //   this.name = name;
+      //   this.age = age;
+      //   this.sayHello = function () {
+      //     console.log("Hi, I'm " + this.name);
+      //   };
+      // }
+
+      // ES6 Classes (Modern Alternative)
+      function Person(name) {
+        this.name = name;
+      }
+
+      Person.prototype.age = 25;
+
+      let jyoti = new Person("Jyoti");
+
+      Person.prototype = { age: 40 };
+
+      let budhiJyoti = new Person("Krishna");
+
+      console.log(jyoti.age);
+      console.log(budhiJyoti.age);
+    </script>
+  </body>
+</html>
