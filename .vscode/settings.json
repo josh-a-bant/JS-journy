@@ -1,0 +1,7 @@
+{
+  "scm.repositories.sortOrder": "discovery time",
+  "explorer.fileNesting.enabled": false,
+  "explorer.excludeGitIgnore": false,
+  "explorer.openEditors.sortOrder": "editorOrder",
+  "explorer.sortOrder": "modified"
+}
