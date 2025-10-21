@@ -1,11 +1,15 @@
 function x() {
-  for (var i = 1; i <= 5; i++) {
-    function closure(x) {
-      setTimeout(function () {
-        console.log(`after ${x} second: ${x}`);
-      }, x * 1000);
+  function closure() {
+    for (let i = 1; i <= 5; i++) {
+      setTimeout(() => {
+        console.log(`after ${i} second: ${i}`);
+      }, i * 1000);
     }
-    closure(i);
   }
+  // console.log(closure());
+  return closure;
 }
-x();
+
+x()();
+// let fn = x();
+// fn();
