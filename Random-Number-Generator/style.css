@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+}
+
+#btn {
+  font-size: 2rem;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background-color: #1bc7be8d;
+  color: rgb(22, 65, 65);
+}
+
+#num {
+  font-size: 3rem;
+}
