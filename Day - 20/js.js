@@ -1,26 +1,27 @@
-// "use strict";
+"use strict";
 
 console.log(this);
 
-// function x() {
-//   console.log(this);
-// }
-// x();
+function x() {
+  console.log(this);
+}
+x();
+window.x();
 
-let obj = {
-  a: 10,
-  // y: function () {
-  //   const x = () => {
-  //     console.log(this);
-  //     // console.log(this.a);
-  //   };
+// let obj = {
+//   a: 10,
+//   y: function () {
+//     const x = () => {
+//       console.log(this);
+//       // console.log(this.a);
+//     };
 
-  //   x();
-  // },
+//     x();
+//   },
 
-  z: () => {
-    console.log(this);
-  },
-};
+//   z: () => {
+//     console.log(this);
+//   },
+// };
 
-obj.z();
+// obj.z();
