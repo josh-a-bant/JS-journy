@@ -1,3 +1,4 @@
+//callback function
 sum(displayResult, 10, 20);
 
 function displayResult(result) {
