@@ -1,8 +1,7 @@
 sum(displayResult, 10, 20);
 
 function displayResult(result) {
-  let displayResult = document.getElementById("display-result");
-  displayResult.textContent = result;
+  document.getElementById("display-result").textContent = result;
 }
 
 function sum(displayFunction, num1, num2) {
