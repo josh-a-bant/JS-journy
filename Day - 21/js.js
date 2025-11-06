@@ -36,20 +36,38 @@
 //   array[index] = number * 3;
 // }
 
-let names = ["jashobanta", "jyoti", "jk"];
+// let names = ["jashobanta", "jyoti", "jk"];
 
-names.forEach(capitalize);
-names.forEach(display);
+// names.forEach(capitalize);
+// names.forEach(display);
 
-function display(name) {
-  let displayNames = document.getElementById("display-names");
-  const h1 = document.createElement("h1");
-  h1.style.color = "blue";
-  h1.style.fontSize = "3em";
-  h1.textContent = name;
-  displayNames.appendChild(h1);
+// function display(name) {
+//   let displayNames = document.getElementById("display-names");
+//   const h1 = document.createElement("h1");
+//   h1.style.color = "blue";
+//   h1.style.fontSize = "3em";
+//   h1.textContent = name;
+//   displayNames.appendChild(h1);
+// }
+
+// function capitalize(name, index, array) {
+//   array[index] = name.charAt(0).toUpperCase() + name.slice(1);
+// }
+
+// filter() methos
+const names = [
+  { name: "jasho", age: 26 },
+  { name: "jyoti", age: 25 },
+  { name: "jk", age: 8 },
+];
+
+let newNames = names.filter(budha);
+newNames.map(displayName);
+
+function displayName(newName) {
+  console.log(`Name = ${newName.name}, Age = ${newName.age}`);
 }
 
-function capitalize(name, index, array) {
-  array[index] = name.charAt(0).toUpperCase() + name.slice(1);
+function budha(name) {
+  return name.age >= 18;
 }
