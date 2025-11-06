@@ -11,37 +11,45 @@
 // }
 
 //forEach() method
-let numbers = [1, 2, 3, 4, 5];
+// let numbers = [1, 2, 3, 4, 5];
 
-numbers.forEach(tripleNumber);
-numbers.forEach(display);
+// numbers.forEach(tripleNumber);
+// numbers.forEach(display);
 
-function display(number) {
-  console.log(number);
-}
-
-function square(number, index, array) {
-  array[index] = Math.pow(number, 2);
-}
-
-function cube(number, index, array) {
-  array[index] = Math.pow(number, 3);
-}
-
-function doubleNumber(number, index, array) {
-  array[index] = number * 2;
-}
-
-function tripleNumber(number, index, array) {
-  array[index] = number * 3;
-}
-
-// let names = ["Jashobanta", "Jyoti", "JK"];
-// names.forEach(display);
-
-// function display(name) {
-//   let displayNames = document.getElementById("display-names");
-//   const h1 = document.createElement("h1");
-//   h1.textContent = name;
-//   displayNames.appendChild(h1);
+// function display(number) {
+//   console.log(number);
 // }
+
+// function square(number, index, array) {
+//   array[index] = Math.pow(number, 2);
+// }
+
+// function cube(number, index, array) {
+//   array[index] = Math.pow(number, 3);
+// }
+
+// function doubleNumber(number, index, array) {
+//   array[index] = number * 2;
+// }
+
+// function tripleNumber(number, index, array) {
+//   array[index] = number * 3;
+// }
+
+let names = ["jashobanta", "jyoti", "jk"];
+
+names.forEach(capitalize);
+names.forEach(display);
+
+function display(name) {
+  let displayNames = document.getElementById("display-names");
+  const h1 = document.createElement("h1");
+  h1.style.color = "blue";
+  h1.style.fontSize = "3em";
+  h1.textContent = name;
+  displayNames.appendChild(h1);
+}
+
+function capitalize(name, index, array) {
+  array[index] = name.charAt(0).toUpperCase() + name.slice(1);
+}
