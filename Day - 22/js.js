@@ -16,3 +16,5 @@ const square = numbers.map(function (number) {
 
 console.log(square);
 console.log(cubes);
+
+// function expressions = a way to define functions as values or variables
