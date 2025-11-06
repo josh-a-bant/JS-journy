@@ -71,3 +71,14 @@ function displayName(newName) {
 function budha(name) {
   return name.age >= 18;
 }
+
+// notes
+// callback function - a function that is passed as an argument to another function.
+
+// forEach method - method used to iterate over the elements of an array and apply a specified function (callback) to each element
+
+// map method - accepts a callback and applies that function to each element of an array, then return a new array
+
+// filter method - creates a new array by filtering out elements with a callback
+
+// reduce method - reduce the elements of an array to a single value
