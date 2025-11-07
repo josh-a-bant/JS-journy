@@ -32,7 +32,7 @@
 // console.log(cubes);
 // console.log(total);
 
-//  arrow functions = a concise way to write function expressions good for simple functions that you use only once
+// arrow functions = a concise way to write function expressions good for simple functions that you use only once
 
 // class MathUtil {
 //   static PI = 3.14159265359;
@@ -81,3 +81,7 @@ user4.sayHello();
 User.getUserCount();
 
 // static = keyword that defines properties or methods that belong to a class itself rather than the objects created from that class (class owns anything static, not the objects)
+
+// inheritance = allows a new class to inherit properties and methods from an existing class. Helps with code reusability
+
+// super = keyword is used in classes to call the constructor or access the properties and methods of a parent (superclass) this = this object super = the parent
