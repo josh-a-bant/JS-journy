@@ -16,4 +16,16 @@
 
 const numbers = [1, 10, 2, 5, 6, 7, 5, 9, 4, 3, 9];
 numbers.sort();
-console.log(numbers);
+// console.log(numbers);
+
+const students = [
+  "Jasho",
+  "Jyoti",
+  "Keeran",
+  "Kiran",
+  "Ravi",
+  "rena",
+  "reetesh",
+];
+students.sort();
+console.log(students);
