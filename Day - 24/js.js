@@ -35,6 +35,7 @@
 //   console.error(`error will be: ${error.message}`);
 // }
 
+// let x = undefinedVariable;
 try {
   // Code that might throw an error
   let result = 10 / 0;
@@ -47,6 +48,15 @@ try {
 } catch (error) {
   // This block runs if there's an error
   console.log("Something went wrong:", error.message);
+} finally {
+  console.log("Program continues...");
 }
 
-console.log("Program continues...");
+// Error = An Object that is created to represent a problem that occurs Occur often with user input or establishing a connection
+
+// try { } = Encloses code that might potentially cause an error
+
+// catch { } = Catch and handle any thrown Errors from try { }
+
+// finally { } = (optional) Always executes. Used mostly for clean up
+//  ex. close files, close connections, release resources
