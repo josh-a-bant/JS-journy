@@ -9,7 +9,6 @@ h1 {
 }
 
 .player-choices {
-  /* background: red; */
   display: flex;
 }
 
@@ -30,8 +29,21 @@ button:hover {
 
 .choices {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .choose {
   font-size: 2rem;
+}
+
+#result {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
 }
